@@ -71,6 +71,32 @@ console.log(total);
 21 表单绑定v-model
 22 修饰符 lazy number trim
 
+————————————————————————————————————————————————————————————————————
+组件化
+1、组件的使用三个步骤：
+创建组件构造器
+注册组件
+使用组件
+2、
+//创建组件构造器
+  const cpnc=Vue.extend({
+    template:`
+       <div>
+       <h2>hshshshhsdd</h2>
+       <h3>jsjshdhhdhhc</h3>
+       </div>`
+  })
+  //注册组件 Vue.component('组件的标签名')组件的标签名 以后使用组件的名称 全局组件
+  Vue.component('my-con',cpnc)
+*怎么注册局部组件
+components:{
+template：'
+模板
+'
+}
+3、父组件和子组件
+
+
 
 
 
