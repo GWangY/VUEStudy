@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .isred{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li  v-on:click="btnRed" v-for="(m,item) in message" v-bind:class="{isred:isRed,isblack:isBlack}">{{item}}--{{m}}</li>
+  </ul>
+</div>
+<script src="../js1/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:"#app",
+    data:{
+      message:['名侦探柯南','香米','浏览','花无缺与小鱼儿'],
+      isRed:false,
+      isBlack:true
+    },
+    methods:{
+      btnRed:function () {
+        return this.isRed=true;
+      }
+    }
+  });
+</script>
+</body>
+</html>

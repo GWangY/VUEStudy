@@ -1,0 +1,77 @@
+1、VUe官网地址：https://cn.vuejs.org
+2、VUE声明式编程,响应式 ：当数据发生变化时 页面也会发生变化
+3、<ul>
+   <li v-for="item in movies">{{item}}</li>
+   </ul>
+   遍历数组 V-for
+   2、v-on:click 绑定点击方法 方法在methods中定义
+ 4、VUE中的MVVM，什么是MVVM?
+ view---viweModel---model
+ 5、VUE的生命周期  VUE生命周期函数
+6、代码规范：缩进两个空格
+7、mustache插值语法 可以直接写变量 也可以写简单的表达式
+8、VUE相关指令
+* v-once 当页面数据发生变化时  页面展示数据不会发生变化 数据只会渲染一次
+* V-html <div v-html="ur"></div>  ur:'<a href="http://www.baidu.com">百度</a>'
+* v-pre 让数据原封显示 不做解析
+* V-cloak 解析之前存在 解析之后不存在
+* V-blind 绑定属性 动态绑定值 v-blind:属性值  V-blind:src='imgUrl' 可以简写为：属性值
+* v-blind 动态绑定class 对象语法 数组语法
+* V-show
+*计算属性 computed 中的方法可以直接当做属性使用 计算属性是有缓存的。如果调用对象没有发生变化的时候 只会调用一次
+9 块级作用域let和var
+let变量 const常量
+ES5之前if和for都没有块级作用域，function有块级作用域
+10, ES5中使用闭包相当于ES6中使用let关键字
+11 使用const的注意点 定义变量不可改变，定义的标识符必须赋值 常量指向一个对象时，指向对象不能修改 但可以修改对象内部属性
+12 对象字面量的增强写法（ES6）：
+*属性的增强写法
+            const name='zhang'
+            const age=14
+            const obj={
+                name,
+                age
+            }
+ *对象ES5的写法
+             const obj={
+               run:function(){
+               },
+                eat:function(){
+
+                 }
+               }
+ *对象的增强写法
+             const obj={
+             run(){
+
+             },
+             eat(){
+
+       }
+
+ }
+ 13 类型检测 typeScript(ts)  微软   angular 是谷歌
+ 14  使用修饰符
+ * .stop @click.stop 阻止冒泡
+ * .prevent @click.prevent 阻止默认行为
+15 input复用问题 给他添加一个key 保证他的key值不同
+16 diff算法 比较不同的替换 了解diff算法
+17 splice /删除函数/插入函数/替换函数
+删除：第二个参数传入 你要删除几个元素
+替换：第二个参数 表示我们要替换几个元素，后面是用于替换前面的元素
+插入函数：第二个参数 传入0，并且后面跟上要插入的元素
+
+6份实验报告 一份ppt
+18 v-model 双向绑定
+19 编程范式：命令式编程、声明式编程、面向对象编程/函数是编程
+20 高阶函数 map reduce filters
+const nums=[10,20,111,222,444,40,50]
+let total=nums.filter(n=>n<100).map(n=>n*2).reduce((pre,n)=>pre+n);
+console.log(total);
+21 表单绑定v-model
+22 修饰符 lazy number trim
+
+
+
+
+

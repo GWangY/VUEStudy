@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <ul >
+    <li v-for="(item,index) in message">{{item}}---{{index}}</li>
+  </ul>
+  <hr/>
+  <ul >
+    <li v-for="(value,key,index) in objs">{{value}}---{{key}}--{{index}}</li>
+  </ul>
+</div>
+<script src="../js1/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:"#app",
+    data:{
+      message:['wnagyan','yang2','gsggd'],
+      objs:{
+        name:'wangd',
+        age:12,
+        height:1.60
+      }
+    }
+  });
+</script>
+</body>
+</html>
