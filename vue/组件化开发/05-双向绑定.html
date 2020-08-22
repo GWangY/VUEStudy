@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn :number1="num1" :number2="num2"
+       @event1click="cpn1Click"
+       @event2click="cpn2Click">
+  </cpn>
+</div>
+<template id="cpn">
+  <div>
+    <p>props:{{number1}}</p>
+    <p>data:{{bnumber1}}</p>
+   <!-- <input type="text" v-model="bnumber1">-->
+    <input type="text" v-bind:value="bnumber1" @input="num1Input">
+    <p>props:{{number2}}</p>
+    <p>data:{{bnumber2}}</p>
+    <!--<input type="text" v-model="bnumber2">-->
+    <input type="text" v-bind:value="bnumber2" @input="num2Input">
+  </div>
+</template>
+<script src="../js1/vue.js"></script>
+<script>
+  const app=new Vue({
+    el:"#app",
+    data:{
+      num1:0,
+      num2:1
+    },
+    methods:{
+      cpn2Click(value){
+        this.num2= parseFloat(value);
+      },
+      cpn1Click(value){
+        this.num1=parseFloat(value);
+      },
+     /* sum(){
+        this.num2=this.num1*1000;
+      }*/
+    },
+    components:{
+     cpn:{
+       template:'#cpn',
+       props:{
+         number1:Number,
+         number2:Number
+       },
+       data(){
+         return {
+           bnumber1:this.number1,
+           bnumber2:this.number2
+         }
+       },
+      methods:{
+       num1Input(event){
+         this. bnumber1=event.target.value;
+         this.$emit('event1click',this.bnumber1)
+       },
+        num2Input(event){
+          this.bnumber2=event.target.value;
+          this.$emit('event2click',this.bnumber2)
+        },
+      }
+
+     }
+    },
+
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn v-bind:cmovies="movies"></cpn>
+</div>
+<template id="cpn">
+  <div>
+    <p v-for="item in cmovies">{{item}}</p>
+    <h2>{{cmessage}}</h2>
+  </div>
+</template>
+
+<script src="../js1/vue.js"></script>
+<script>
+  //创建一个组件构造器
+
+ /* const cpn={
+    template: '#cpn',
+    props:['cmovies','cmessage'],
+    data(){
+      return {}
+    },
+    methods:{
+
+    }
+
+  }*/
+  Vue.component('cpn',{
+    template: '#cpn',
+   /* props:['cmovies','cmessage']*/
+      props:{
+        cmovies:Array,
+        cmessage:{
+          type:String,
+          default:'shdhhdgfg',
+          //必须传值
+          require:true
+        }
+      },
+    data(){
+      return {}
+    },
+    methods:{
+
+    }
+
+  })
+  const app=new Vue({
+    el:"#app",
+    data:{
+      message:"信息系统",
+      movies:['数据','名侦探柯南','香米']
+    },
+    //注册组件
+   /* components:{
+      cpn
+    }*/
+  });
+</script>
+</body>
+</html>

@@ -95,8 +95,40 @@ template：'
 '
 }
 3、父组件和子组件
+fu组件给子组件传递数据
+注：V-for对象遍历
+ <h2 v-for="item in cinfo">{{item.name}}--{{item.age}}--{{item.height}}</h2>
+4、子传父
+ btnClick(item){
+        //子组件发射一个事件 父组件监听子组件发射事件 自定义事件
+        this.$emit('itemclick',item)
+      }
+5 组件文件用三个部分组成
+template
+script
+style scoped
+//typora软件安装
+ props里面的数据最好不要的双向绑定数据
+@input='bnumber1=$event.target.value'
+v-model 与watch配合使用 watch中直接修改属性
+父访问子：$children、$refs<cpn refs='aaa'>
+子访问父：$parent  $root
+————————————————————————————————————————
+插槽：slot(掌握)<slot></slot>
+可以设置默认值 不传入值时展示默认值
+<slot name="left"><span>左边</span></slot>
+<slot></slot>
+替换掉时候不指定名称就替换没有命名的 指定名称就替换有名字的
+<div id="app">
+  <cpn><span slot="left">标题</span></cpn>
+</div>
+总结：父组件替换插槽的标签，但内容有子组件来提供
 
-
+————————————————————————————————————————————
+模块化开发
+ES6模块化 导入和导出
+导出：export default
+导入：import from
 
 
 
