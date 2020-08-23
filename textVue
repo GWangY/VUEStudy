@@ -129,6 +129,8 @@ v-model 与watch配合使用 watch中直接修改属性
 ES6模块化 导入和导出
 导出：export default
 导入：import from
+________________
+
 
 
 
