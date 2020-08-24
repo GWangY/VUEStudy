@@ -1,4 +1,8 @@
 const path=require('path')
+const HtmlWebpackPlugin=require('html-webpack-plugin')
+/*const htmlPlugin=new HtmlWebpackPlugin({
+  template:'index.html'
+})*/
 module.exports={
   entry:'./src/main.js',
   output:{
@@ -49,5 +53,8 @@ module.exports={
   },
   resolve:{
     alias:{"vue$":'vue/dist/vue.esm.js'}
-  }
+  },
+  plugins:[
+
+  ]
 }
